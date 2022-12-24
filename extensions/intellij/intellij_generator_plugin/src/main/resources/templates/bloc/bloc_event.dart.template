@@ -1,0 +1,13 @@
+part of '${bloc_snake_case}_bloc.dart';
+
+abstract class ${bloc_pascal_case}Event extends Equatable {}
+
+class ${bloc_pascal_case}ShowLoading extends ${bloc_pascal_case}Event {
+  @override
+  List<Object?> get props => [];
+}
+
+class ${bloc_pascal_case}HideLoading extends ${bloc_pascal_case}Event {
+  @override
+  List<Object?> get props => [];
+}

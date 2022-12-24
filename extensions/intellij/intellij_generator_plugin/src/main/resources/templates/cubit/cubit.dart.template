@@ -1,0 +1,14 @@
+import 'package:ko_teacher_v5/base/base.dart';
+import 'package:flutter/material.dart';
+
+part '${cubit_snake_case}_state.dart';
+
+class ${cubit_pascal_case}Cubit extends BaseCubit<${cubit_pascal_case}State> {
+  ${cubit_pascal_case}Cubit(BuildContext context, ${cubit_pascal_case}State initialState)
+      : super(context, initialState);
+
+  @override
+  void init(BuildContext context) {
+    super.init(context);
+  }
+}

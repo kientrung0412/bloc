@@ -9,7 +9,7 @@ public class GenerateBlocDialog extends DialogWrapper {
 
     private final Listener listener;
     private JTextField blocNameTextField;
-    private JCheckBox useEquatableCheckbox;
+    private JCheckBox useStatefulCheckbox;
     private JPanel contentPanel;
 
     public GenerateBlocDialog(final Listener listener) {
@@ -27,7 +27,7 @@ public class GenerateBlocDialog extends DialogWrapper {
     @Override
     protected void doOKAction() {
         super.doOKAction();
-        this.listener.onGenerateBlocClicked(blocNameTextField.getText(), useEquatableCheckbox.isSelected());
+        this.listener.onGenerateBlocClicked(blocNameTextField.getText(), useStatefulCheckbox.isSelected());
     }
 
     @Nullable
@@ -37,6 +37,6 @@ public class GenerateBlocDialog extends DialogWrapper {
     }
 
     public interface Listener {
-        void onGenerateBlocClicked(String blocName, boolean shouldUseEquatable);
+        void onGenerateBlocClicked(String blocName, boolean useStateful);
     }
 }

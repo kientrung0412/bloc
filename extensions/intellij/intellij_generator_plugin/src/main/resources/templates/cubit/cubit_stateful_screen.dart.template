@@ -1,0 +1,19 @@
+import 'package:ko_teacher_v5/base/screen/base_cubit_view_state.dart';
+import 'package:flutter/material.dart';
+
+import '${cubit_snake_case}_cubit.dart';
+
+class ${cubit_pascal_case}Screen extends StatefulWidget {
+  const ${cubit_pascal_case}Screen({Key? key}) : super(key: key);
+
+  @override
+  State<${cubit_pascal_case}Screen> createState() => _${cubit_pascal_case}ScreenState();
+}
+
+class _${cubit_pascal_case}ScreenState extends BaseCubitViewState<${cubit_pascal_case}Screen, ${cubit_pascal_case}Cubit, ${cubit_pascal_case}State> {
+
+  @override
+  Widget buildChild(BuildContext context) {
+    return Container();
+  }
+}

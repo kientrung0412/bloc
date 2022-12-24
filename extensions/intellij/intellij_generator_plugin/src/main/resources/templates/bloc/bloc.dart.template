@@ -1,0 +1,36 @@
+import 'dart:async';
+
+import 'package:ko_teacher_v5/base/base.dart';
+import 'package:equatable/equatable.dart';
+
+part '${bloc_snake_case}_event.dart';
+
+part '${bloc_snake_case}_state.dart';
+
+class ${bloc_pascal_case}Bloc extends BaseBloc<${bloc_pascal_case}State, ${bloc_pascal_case}Event> {
+  ${bloc_pascal_case}Bloc(super.initState, super.context);
+
+  @override
+  void initEvent() {
+    on<${bloc_pascal_case}ShowLoading>(
+      (event, emit) => emit(
+        state.copyWith(
+          screenStatus: ScreenStatus.loading,
+        ),
+      ),
+    );
+
+    on<${bloc_pascal_case}HideLoading>(
+      (event, emit) => emit(
+        state.copyWith(
+          screenStatus: ScreenStatus.idle,
+        ),
+      ),
+    );
+  }
+
+  @override
+  void init() {
+
+  }
+}

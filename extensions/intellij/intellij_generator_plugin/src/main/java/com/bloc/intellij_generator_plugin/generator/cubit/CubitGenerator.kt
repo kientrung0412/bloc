@@ -1,13 +1,13 @@
-package com.bloc.intellij_generator_plugin.generator
+package com.bloc.intellij_generator_plugin.generator.cubit
 
+import com.bloc.intellij_generator_plugin.intention_action.toLowerSnakeCase
+import com.bloc.intellij_generator_plugin.intention_action.toUpperCamelCase
 import com.google.common.io.CharStreams
-import com.fleshgrinder.extensions.kotlin.*
 import org.apache.commons.lang.text.StrSubstitutor
 import java.io.InputStreamReader
 import java.lang.RuntimeException
 
 abstract class CubitGenerator(private val name: String,
-                             useEquatable: Boolean,
                              templateName: String) {
 
     private val TEMPLATE_CUBIT_PASCAL_CASE = "cubit_pascal_case"
@@ -22,8 +22,7 @@ abstract class CubitGenerator(private val name: String,
             TEMPLATE_CUBIT_SNAKE_CASE to snakeCase()
         )
         try {
-            val templateFolder = if (useEquatable) "cubit_with_equatable" else "cubit_without_equatable"
-            val resource = "/templates/$templateFolder/$templateName.dart.template"
+            val resource = "/templates/cubit/$templateName.dart.template"
             val resourceAsStream = CubitGenerator::class.java.getResourceAsStream(resource)
             templateString = CharStreams.toString(InputStreamReader(resourceAsStream, Charsets.UTF_8))
         } catch (e: Exception) {

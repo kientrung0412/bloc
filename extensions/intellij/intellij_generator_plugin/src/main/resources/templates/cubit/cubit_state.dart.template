@@ -1,0 +1,20 @@
+part of '${cubit_snake_case}_bloc.dart';
+
+class ${cubit_pascal_case}State extends BaseState<${cubit_pascal_case}State> {
+  @override
+  ${cubit_pascal_case}State copyWith({ScreenStatus? screenStatus, String? message}) {
+    return ${cubit_pascal_case}State(
+      screenStatus: screenStatus ?? this.screenStatus,
+      message: message ?? this.message,
+    );
+  }
+
+  ${cubit_pascal_case}State({
+    super.screenStatus,
+    super.message,
+    super.screenTitle,
+  });
+
+  @override
+  List<Object?> get props => [...super.props];
+}

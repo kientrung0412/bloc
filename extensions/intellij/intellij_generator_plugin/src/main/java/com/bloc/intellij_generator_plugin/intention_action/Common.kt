@@ -49,14 +49,13 @@ class Common {
             }
             val selectedText = document.getText(TextRange.create(offsetStart, offsetEnd))
 
-            val replaceWith: String
-            if (blocChildWidget != null) {
+            val replaceWith: String = if (blocChildWidget != null) {
                 val blocChildWidgetText = blocChildWidget.text
                 val movedBlocWithoutChild = selectedText.replaceFirst(blocChildWidgetText, "")
                     .replaceFirst("[^\\S\\r\\n]*child: ,\\s*".toRegex(), "")
-                replaceWith = Snippets.getSnippet(snippetType, blocChildWidgetText, movedBlocWithoutChild)
+                Snippets.getSnippet(snippetType, blocChildWidgetText, movedBlocWithoutChild)
             } else {
-                replaceWith = Snippets.getSnippet(snippetType, "", selectedText)
+                Snippets.getSnippet(snippetType, "", selectedText)
             }
 
             // wrap the widget:

@@ -1,0 +1,11 @@
+import 'package:ko_teacher_v5/base/base.dart';
+import 'package:flutter/widgets.dart';
+
+import '${cubit_snake_case}_cubit.dart';
+
+class ${cubit_pascal_case}Screen extends BaseCubitView<${cubit_pascal_case}Cubit, ${cubit_pascal_case}State> {
+  @override
+  Widget buildChild(BuildContext context) {
+    return Container();
+  }
+}

@@ -1,0 +1,2 @@
+export '${bloc_snake_case}_bloc.dart';
+export '${bloc_snake_case}_screen.dart';

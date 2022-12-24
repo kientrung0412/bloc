@@ -1,0 +1,24 @@
+import 'package:ko_teacher_v5/base/screen/base_bloc_view_state.dart';
+import 'package:flutter/widgets.dart';
+
+import '${bloc_snake_case}_bloc.dart';
+
+class ${bloc_pascal_case}Screen extends StatefulWidget {
+  const ${bloc_pascal_case}Screen({Key? key}) : super(key: key);
+
+  @override
+  State<${bloc_pascal_case}Screen> createState() => _${bloc_pascal_case}ScreenState();
+}
+
+class _${bloc_pascal_case}ScreenState
+    extends BaseBlocViewState<${bloc_pascal_case}Screen, ${bloc_pascal_case}Bloc, ${bloc_pascal_case}State, ${bloc_pascal_case}Event> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget buildChild(BuildContext context) {
+    return Container();
+  }
+}

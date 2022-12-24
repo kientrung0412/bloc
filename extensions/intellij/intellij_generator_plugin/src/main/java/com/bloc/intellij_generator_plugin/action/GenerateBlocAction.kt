@@ -1,7 +1,7 @@
 package com.bloc.intellij_generator_plugin.action
 
-import com.bloc.intellij_generator_plugin.generator.BlocGeneratorFactory
-import com.bloc.intellij_generator_plugin.generator.BlocGenerator
+import com.bloc.intellij_generator_plugin.generator.bloc.BlocGeneratorFactory
+import com.bloc.intellij_generator_plugin.generator.bloc.BlocGenerator
 import com.intellij.lang.java.JavaLanguage
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.application.ApplicationManager
@@ -9,7 +9,7 @@ import com.intellij.openapi.command.CommandProcessor
 import com.intellij.openapi.project.Project
 import com.intellij.psi.*
 
-class GenerateBlocAction : AnAction(), GenerateBlocDialog.Listener {
+open class GenerateBlocAction : AnAction(), GenerateBlocDialog.Listener {
 
     private lateinit var dataContext: DataContext
 
@@ -18,9 +18,9 @@ class GenerateBlocAction : AnAction(), GenerateBlocDialog.Listener {
         dialog.show()
     }
 
-    override fun onGenerateBlocClicked(blocName: String?, shouldUseEquatable: Boolean) {
+    override fun onGenerateBlocClicked(blocName: String?, useStateful: Boolean) {
         blocName?.let { name ->
-            val generators = BlocGeneratorFactory.getBlocGenerators(name, shouldUseEquatable)
+            val generators = BlocGeneratorFactory.getBlocGenerators(name, useStateful)
             generate(generators)
         }
     }
@@ -33,7 +33,7 @@ class GenerateBlocAction : AnAction(), GenerateBlocDialog.Listener {
         }
     }
 
-    protected fun generate(mainSourceGenerators: List<BlocGenerator>) {
+    private fun generate(mainSourceGenerators: List<BlocGenerator>) {
         val project = CommonDataKeys.PROJECT.getData(dataContext)
         val view = LangDataKeys.IDE_VIEW.getData(dataContext)
         val directory = view?.orChooseDirectory

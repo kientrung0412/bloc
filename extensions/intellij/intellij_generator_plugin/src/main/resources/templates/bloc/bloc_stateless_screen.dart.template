@@ -1,0 +1,10 @@
+import 'package:ko_teacher_v5/base/screen/base_bloc_view.dart';
+import '${bloc_snake_case}_bloc.dart';
+import 'package:flutter/widgets.dart';
+
+class ${bloc_pascal_case}Screen extends BaseBlocView<${bloc_pascal_case}Bloc, ${bloc_pascal_case}State, ${bloc_pascal_case}Event> {
+  @override
+  Widget buildChild(BuildContext context) {
+    return Container();
+  }
+}
