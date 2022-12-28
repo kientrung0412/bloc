@@ -20,10 +20,10 @@ class ${bloc_pascal_case}Bloc extends BaseBloc<${bloc_pascal_case}State, ${bloc_
       ),
     );
 
-    on<${bloc_pascal_case}HideLoading>(
+    on<Reset${bloc_pascal_case}State>(
       (event, emit) => emit(
         state.copyWith(
-          screenStatus: ScreenStatus.idle,
+          state.resetScreenStatus(),
         ),
       ),
     );

@@ -7,7 +7,7 @@ class ${bloc_pascal_case}ShowLoading extends ${bloc_pascal_case}Event {
   List<Object?> get props => [];
 }
 
-class ${bloc_pascal_case}HideLoading extends ${bloc_pascal_case}Event {
+class Reset${bloc_pascal_case}State extends ${bloc_pascal_case}Event {
   @override
   List<Object?> get props => [];
 }
