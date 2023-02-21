@@ -7,17 +7,22 @@ class ${bloc_pascal_case}State extends BaseState<${bloc_pascal_case}State> {
     super.message,
     super.screenTitle,
     super.routeState,
+    super.shimmerLoading,
   });
 
   @override
   ${bloc_pascal_case}State copyWith({
     ScreenStatus? screenStatus,
     String? message,
+    RouteState? routeState,
+    bool? shimmerLoading,
   }) {
     return ${bloc_pascal_case}State(
       screenStatus: screenStatus ?? this.screenStatus,
       message: message ?? this.message,
       routeState: routeState ?? this.routeState,
+      screenTitle: screenTitle ?? this.screenTitle,
+      shimmerLoading: shimmerLoading,
     );
   }
 
